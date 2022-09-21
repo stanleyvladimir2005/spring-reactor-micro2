@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/meseroapp
+  
+  main:
+    web-application-type: reactive
+     
+  application:
+    name: micro2
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
