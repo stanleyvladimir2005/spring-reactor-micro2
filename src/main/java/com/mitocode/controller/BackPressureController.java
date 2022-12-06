@@ -1,14 +1,11 @@
 package com.mitocode.controller;
 
 import java.time.Duration;
-
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.mitocode.model.Plato;
-
 import reactor.core.publisher.Flux;
 
 @RestController
@@ -41,10 +38,10 @@ public class BackPressureController {
 	
 	//JSON
 	//[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}] JSON.parse
-	
+
 	//STREAM+JSON
 	//{}{}{}{}{}{}{}{}
-	
+
 	@GetMapping(value= "/buffer")
 	public Flux<Integer> testContrapresion() {
 		return Flux.range(1, 100)  
@@ -54,5 +51,4 @@ public class BackPressureController {
 				//.limitRate(10, 0)
 				.delayElements(Duration.ofMillis(1));
 	}
-
 }

@@ -3,24 +3,20 @@ package com.mitocode.serviceImpl;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.mitocode.dto.FiltroDTO;
 import com.mitocode.model.Factura;
 import com.mitocode.repo.IFacturaRepo;
 import com.mitocode.repo.IGenericRepo;
 import com.mitocode.service.IFacturaService;
-
-/*
-import net.sf.jasperreports.engine.JasperCompileManager;
+import reactor.core.publisher.Flux;
+/*import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;*/
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
