@@ -3,9 +3,9 @@ package com.mitocode.exceptions;
 import com.mitocode.dto.ErrorResponse;
 import com.mitocode.dto.RestResponse;
 import org.springframework.boot.autoconfigure.web.WebProperties;
-import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
-import org.springframework.boot.web.reactive.error.ErrorAttributes;
+import org.springframework.boot.webflux.autoconfigure.error.AbstractErrorWebExceptionHandler;
+import org.springframework.boot.webflux.error.ErrorAttributes;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.server.*;
 import reactor.core.publisher.Mono;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,4 +75,5 @@ public class GlobalErrorWebExceptionHandler extends AbstractErrorWebExceptionHan
 				.contentType(MediaType.APPLICATION_JSON)
 				.body(BodyInserters.fromValue(rr));
 	}
+
 }
